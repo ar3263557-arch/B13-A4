@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Tracker Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+  <header class="bg-white shadow p-4 flex gap-4 flex-col justify-between items-start">
+    <h1 class="text-xl font-bold">Job Application Tracker</h1>
+    <div class="flex gap-4">
+      <div class="bg-blue-100 px-4 py-2 rounded">
+        <p>Total: <span id="totalCount">0</span></p>
+      </div>
+      <div class="bg-green-100 px-4 py-2 rounded">
+        <p>Interview: <span id="interviewCount">0</span></p>
+      </div>
+      <div class="bg-red-100 px-4 py-2 rounded">
+        <p>Rejected: <span id="rejectedCount">0</span></p>
+      </div>
+    </div>
+  </header>
+
+  
+  <section class="p-6">
+
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-2xl font-semibold">Available Jobs</h2>
+      <span class="text-lg font-medium">Jobs: <span id="tabCount">0</span></span>
+    </div>
+
+    <div class="flex gap-4 mb-6">
+      <button onclick="switchTab('all')" class="tab-btn bg-blue-500 text-white px-4 py-2 rounded">All</button>
+      <button onclick="switchTab('interview')" class="tab-btn bg-gray-300 px-4 py-2 rounded">Interview</button>
+      <button onclick="switchTab('rejected')" class="tab-btn bg-gray-300 px-4 py-2 rounded">Rejected</button>
+    </div>
+
+    <div id="jobsContainer" class="grid sm:grid-cols-1 gap-6">
+    </div>
+
+    
+    <div id="emptyState" class="hidden text-center mt-10">
+      <img src="B13-A4-PH-Job-Tracker/jobs.png" 
+           class="w-20 mx-auto mb-4" />
+      <h3 class="text-xl font-semibold">No Jobs Available</h3>
+      <p class="text-gray-500">You haven't moved any job to this section yet.</p>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
